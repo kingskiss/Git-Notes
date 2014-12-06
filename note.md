@@ -32,3 +32,25 @@ git diff
 也就算修改之后还没有暂存起来的变化内容。
 若要看已经暂存起来的文件和上次提交时的快照之间的差异，可以用
 git --staged
+
+8. 提交更新
+git commit -m "created or modified some files"
+跳过使用暂存区域直接提交
+git commit -a -m "xxx"
+
+9. 移除文件
+git rm
+如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项-f，
+以防误删除文件 后丢失修改的内容。
+另外一种情况是，我们想把文件从git仓库中删除，但仍然希望保留在当前工作目录中。
+git rm --cached readme.txt
+
+git rm log/\*.log	此命令删除所有log/目录下扩展名为.log的文件。
+git rm \*~		此命令会递归删除当前目录及其子目录中所有~结尾的文件。
+
+10. 移动文件
+git mv readme.md readme
+相当于运行了下面三条命令：
+mv readme.md readme
+git rm readme.md
+git add readme
