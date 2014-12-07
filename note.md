@@ -126,7 +126,21 @@ git reset HEAD <file>...
 取消对文件的修改
 git checkout --<file>...
 
+13. 远程仓库的使用
+查看当前的远程库
+git remote
+git remote -v 		显示对应的clone地址
 
+添加远程仓库
+git remote add [shortname] [url]
+git remote add pd git@github.com:paulboone/ticgit.git
+
+比如说，要抓取所有Paul有的，但本地仓库没有的信息，可以运行
+git fetch pd
+
+从远程仓库抓取数据
+git fetch [remote-name]
+此命令会到远程仓库中拉取所有你本地仓库中还没有的数据
 
 
 
